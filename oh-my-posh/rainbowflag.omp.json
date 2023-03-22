@@ -1,0 +1,90 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "final_space": true,
+  "blocks": [
+    {
+      "alignment": "left",
+      "horizontal_offset": 0,
+      "vertical_offset": 0,
+      "segments": [
+        {
+          "type": "os",
+          "style": "diamond",
+          "foreground": "#FFFFFF",
+          "background": "#e40303",
+          "leading_diamond": "",
+          "properties": {
+            "wsl": "",
+            "wsl_separator": "",
+            "prefix": " "
+          }
+        },
+        {
+          "type": "az",
+          "style": "powerline",
+          "powerline_symbol": "\uE0B0",
+          "foreground": "#FFFFFF",
+          "background": "#ff8c00",
+          "trailing_diamond": "\uE0B0",
+          "properties": {
+            "template": "",
+            "prefix": " \uFD03",
+            "postfix": "\u2800"
+          }
+        },
+        {
+          "style": "powerline",
+          "powerline_symbol": "\uE0B0",
+          "type": "path",
+          "foreground": "#000000",
+          "background": "#ffed00",
+          "properties": {
+            "prefix": "  ",
+            "home_icon": "~",
+            "style": "folder",
+            "postfix": "\u2800"
+          }
+        },
+        {
+          "style": "powerline",
+          "powerline_symbol": "\uE0B0",
+          "type": "git",
+          "foreground": "#FFFFFF",
+          "background": "#008026",
+          "leading_diamond": "",
+          "trailing_diamond": "",
+          "properties": {
+            "display_status": true,
+            "display_stash_count": true,
+            "display_upstream_icon": true,
+            "fetch_status": true,
+            "fetch_stash_count": true,
+            "fetch_upstream_icon": true,
+            "template": "{{ .UpstreamIcon }}{{ .HEAD }}{{ if gt .StashCount 0 }} \uF692 {{ .StashCount }}{{ end }}"
+          }
+        },
+        {
+          "type": "kubectl",
+          "style": "powerline",
+          "powerline_symbol": "\uE0B0",
+          "foreground": "#FFFFFF",
+          "background": "#004dff",
+          "leading_diamond": "",
+          "trailing_diamond": "",
+          "properties": {
+            "prefix": " \uFD31 ",
+            "template": "{{.Context}}{{if .Namespace}} :: {{.Namespace}}{{end}}"
+          }
+        },
+        {
+          "background": "#750787",
+          "foreground": "#FFFFFF",
+          "powerline_symbol": "\uE0B0",
+          "style": "powerline",
+          "type": "root"
+        }
+      ],
+      "type": "prompt"
+    }
+  ]
+}

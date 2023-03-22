@@ -1,1 +1,1 @@
-oh-my-posh init pwsh --config '~/p10k.omp.json' | Invoke-Expression
+oh-my-posh init pwsh --config '~/rainbowflag.omp.json' | Invoke-Expression

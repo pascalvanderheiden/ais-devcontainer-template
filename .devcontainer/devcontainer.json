@@ -1,5 +1,5 @@
 {
-  "name": "DevContainer for .NET",
+  "name": "DevContainer for Azure Integration Services",
 
   "build": {
     "dockerfile": "./Dockerfile",
@@ -20,26 +20,28 @@
     // ASP.NET Core Web/API App, Blazor App
     5000, 5001,
     // Azure Static Web Apps
-    4280
+    4280,
+    // Azure Logic Apps
+    8000
   ],
 
   "features": {
     // Uncomment the below to install Azure CLI
-    // "ghcr.io/devcontainers/features/azure-cli:1": {
-    //   "version": "latest"
-    // },
+    "ghcr.io/devcontainers/features/azure-cli:1": {
+      "version": "latest"
+    },
 
     // Uncomment the below to install GitHub CLI
-    // "ghcr.io/devcontainers/features/github-cli:1": {
-    //   "version": "latest"
-    // },
+    "ghcr.io/devcontainers/features/github-cli:1": {
+      "version": "latest"
+    },
 
     // Uncomment the below to install node.js
-    // "ghcr.io/devcontainers/features/node:1": {
-    //   "version": "lts",
-    //   "nodeGypDependencies": true,
-    //   "nvmInstallPath": "/usr/local/share/nvm"
-    // },
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "lts",
+      "nodeGypDependencies": true,
+      "nvmInstallPath": "/usr/local/share/nvm"
+    },
 
     // Install common utilities
     "ghcr.io/devcontainers/features/common-utils:1": {
@@ -63,33 +65,72 @@
       // Add the IDs of extensions you want installed when the container is created.
       "extensions": [
         // Recommended extensions - GitHub
-        // "cschleiden.vscode-github-actions",
-        // "GitHub.vscode-pull-request-github",
+        "cschleiden.vscode-github-actions",
+        "GitHub.vscode-pull-request-github",
+        "me-dutour-mathieu.vscode-github-actions",
 
         // Recommended extensions - Azure
-        // "Azurite.azurite",
-        // "ms-azuretools.vscode-bicep",
+        "Azurite.azurite",
+        "ms-azuretools.vscode-bicep",
+        "ms-vscode.azure-account",
+        "ms-azuretools.azure-dev",
+        "ms-azuretools.vscode-azurecli",
+        "ms-azuretools.vscode-azurestorage",
+        "formulahendry.azure-storage-explorer",
+        "ms-vscode.remote-explorer",
+
+        // Recommended extensions - Azure Integration Services
+        "ms-azuretools.vscode-apimanagement",
+        "ms-azuretools.vscode-azureappservice",
+        "ms-azuretools.vscode-azurefunctions",
+        "ms-azuretools.vscode-logicapps",
+        "ms-azuretools.vscode-azurelogicapps",
+        "J-Cat.vscode-logicapp-runner",
+        "digital-molecules.service-bus-explorer",
+
+        // Recommended extensions - Integration
+        "ms-azuretools.vscode-dapr",
+        "humao.rest-client",
+        "kirchner-trevor.shopify-liquid-preview",
+        "stansw.vscode-odata",
+        "DotJoshJohnson.xml",
+        "42Crunch.vscode-openapi",
+        "GraphQL.vscode-graphql",
+        "GraphQL.vscode-graphql-syntax",
+        "sissel.shopify-liquid",
+        "SAPSE.vsc-extension-odata-csdl-modeler",
+        
+        // Recommended extensions - Azure Data Services
+        "ms-azuretools.vscode-cosmosdb",
+        "ms-mssql.mssql",
+        "mtxr.sqltools",
+        "ms-mssql.data-workspace-vscode",
+        
+        // Recommended extensions - Azure Streaming Services
+        "Summer.azure-event-hub-explorer",
+        "ms-azuretools.vscode-azureeventhubs",
+        "ms-bigdatatools.vscode-asa",
 
         // Recommended extensions - Collaboration
-        // "eamodio.gitlens",
-        // "EditorConfig.EditorConfig",
-        // "MS-vsliveshare.vsliveshare-pack",
-        // "streetsidesoftware.code-spell-checker",
+        "eamodio.gitlens",
+        "EditorConfig.EditorConfig",
+        "MS-vsliveshare.vsliveshare-pack",
+        "streetsidesoftware.code-spell-checker",
 
         // Recommended extensions - .NET
-        // "Fudge.auto-using",
-        // "jongrant.csharpsortusings",
-        // "kreativ-software.csharpextensions",
+        "Fudge.auto-using",
+        "jongrant.csharpsortusings",
+        "kreativ-software.csharpextensions",
 
         // Recommended extensions - Power Platform
-        // "microsoft-IsvExpTools.powerplatform-vscode",
+        "microsoft-IsvExpTools.powerplatform-vscode",
 
         // Recommended extensions - Markdown
-        // "bierner.github-markdown-preview",
-        // "DavidAnson.vscode-markdownlint",
-        // "docsmsft.docs-linting",
-        // "johnpapa.read-time",
-        // "yzhang.markdown-all-in-one",
+        "bierner.github-markdown-preview",
+        "DavidAnson.vscode-markdownlint",
+        "docsmsft.docs-linting",
+        "johnpapa.read-time",
+        "yzhang.markdown-all-in-one",
 
         // Required extensions
         "GitHub.copilot",
