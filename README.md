@@ -123,4 +123,4 @@ Commit the changes, and this will trigger the CI Build Pipeline.
 
 ### Did I miss a cool extension? ###
 
-Please let me know. I'm happy to add cool stuff in here!
+Please let me know. I'm happy to add more cool stuff!
