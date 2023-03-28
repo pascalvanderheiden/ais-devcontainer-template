@@ -11,33 +11,39 @@ resource apiManagementLogger 'Microsoft.ApiManagement/service/loggers@2020-12-01
   name: '${apimName}/${appInsightsName}'
 }
 
-resource apimApi 'Microsoft.ApiManagement/service/apis@2020-12-01' = {
-  name: 'sample-api'
+// Petshop api Sample
+resource petshopApi 'Microsoft.ApiManagement/service/apis@2020-12-01' = {
+  name: 'petshop-api'
   parent: apiManagement
   properties: {
-    path: 'sample-api'
+    path: 'petshop'
     apiRevision: '1'
-    displayName: 'Sample API'
-    description: 'This is a sample API.'
-    subscriptionRequired: false
+    displayName: 'Petshop API'
+    description: 'Petshop API Sample'
+    subscriptionRequired: true
+    serviceUrl: 'https://thijdemopetshop.azurewebsites.net/api'
+    subscriptionKeyParameterNames: {
+      header: 'api-key'
+      query: 'api-key'
+    }
     protocols: [
       'https'
     ]
   }
 }
 
-resource apiPolicies 'Microsoft.ApiManagement/service/apis/policies@2020-12-01' = {
+resource petshopApiPolicies 'Microsoft.ApiManagement/service/apis/policies@2020-12-01' = {
   name: 'policy'
-  parent: apimApi
+  parent: petshopApi
   properties: {
-    value: loadTextContent('./policies/api_policy.xml')
+    value: loadTextContent('./policies/petshopapi_policy.xml')
     format: 'rawxml'
   }
 }
 
 resource apiMonitoring 'Microsoft.ApiManagement/service/apis/diagnostics@2020-06-01-preview' = {
   name: 'applicationinsights'
-  parent: apimApi
+  parent: petshopApi
   properties: {
     alwaysLog: 'allErrors'
     loggerId: apiManagementLogger.id  
