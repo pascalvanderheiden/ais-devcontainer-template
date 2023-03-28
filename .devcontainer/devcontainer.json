@@ -142,10 +142,14 @@
 
       "settings": {
         // Uncomment if you want to use zsh as the default shell
-        "terminal.integrated.defaultProfile.linux": "zsh",
+        "terminal.integrated.defaultProfile.linux": "pwsh",
         "terminal.integrated.profiles.linux": {
           "zsh": {
             "path": "/usr/bin/zsh"
+          },
+          "pwsh": {
+            "path": "pwsh",
+            "icon": "terminal-powershell"
           }
         },
 
